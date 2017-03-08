@@ -45,3 +45,14 @@
 <% if (page.mathjax) { %>
     <%- partial('_widget/mathjax') %>
 <% } %>
+
+<script>
+  $(function () {
+    if('serviceWorker' in navigator) {
+	//注册上一步创建的js文件
+    navigator.serviceWorker
+        .register('/js/service-worker.js')
+        .then(function() { console.log('Service Worker Registered'); });
+      }
+  });
+</script>
